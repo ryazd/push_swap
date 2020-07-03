@@ -32,5 +32,12 @@ int                 numstr(char *av);
 char                *makemas(char **av);
 int                 readinstructions(t_list **stack_a, t_list **stack_b);
 void                ft_freearray(char ***new);
+int                 check_instruction(t_list **st_a, t_list **st_b, char *inst);
+int                 ft_strcmp(char *str1, char *str2);
+int                 ft_swap(t_list **lst1, t_list **lst2);
+int                 ft_push(t_list **lst1, t_list **lst2);
+int                 ft_rotate(t_list **lst1, t_list **lst2, int i);
+int                 freestacks(t_list **stack_a, t_list **stack_b);
+
 
 #endif //UNTITLED_CHECKER_H

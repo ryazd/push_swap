@@ -356,6 +356,48 @@ int ft_swap(t_list **lst1, t_list **lst2)
     return (1);
 }
 
+int ft_push(t_list **lst1, t_list **lst2)
+{
+    t_list *cp;
+
+    if (lst2 && *lst2)
+    {
+        cp = *lst2;
+        *lst2 = (*lst2)->next;
+        cp->next = *lst1;
+        *lst1 = cp;
+    }
+    return (1);
+}
+
+int ft_rotate(t_list **lst1, t_list **lst2, int i)
+{
+    t_list *cp;
+
+    cp = *lst1;
+    if (lst1 && *lst1 && (*lst1)->next && i == 1)
+    {
+        while (cp->next)
+            cp = cp->next;
+        cp->next = *lst1;
+        *lst1 = (*lst1)->next;
+        cp = cp->next;
+        cp->next = NULL;
+    }
+    if (lst1 && *lst1 && (*lst1)->next && i == 2)
+    {
+        while ((*lst1)->next)
+            *lst1 = (*lst1)->next;
+        (*lst1)->next = cp;
+        while (cp->next != *lst1)
+            cp = cp->next;
+        cp->next = NULL;
+    }
+    if (lst2)
+        return (ft_rotate(lst2, NULL, i));
+    return (1);
+}
+
 int check_instruction(t_list **st_a, t_list **st_b, char *inst)
 {
     if (ft_strcmp(inst, "sa"))
@@ -364,22 +406,22 @@ int check_instruction(t_list **st_a, t_list **st_b, char *inst)
         return (ft_swap(st_b, NULL));
     if (ft_strcmp(inst, "ss"))
         return (ft_swap(st_a, st_b));
-    /*if (ft_strcmp(inst, "pa"))
-        return (ft_pa(st_a, st_b));
+    if (ft_strcmp(inst, "pa"))
+        return (ft_push(st_a, st_b));
     if (ft_strcmp(inst, "pb"))
-        return (ft_pb(st_a, st_b));
+        return (ft_push(st_b, st_a));
     if (ft_strcmp(inst, "ra"))
-        return (ft_ra(st_a, st_b));
+        return (ft_rotate(st_a, NULL, 1));
     if (ft_strcmp(inst, "rb"))
-        return (ft_sa(st_a, st_b));
+        return (ft_rotate(st_b, NULL, 1));
     if (ft_strcmp(inst, "rr"))
-        return (ft_sa(st_a, st_b));
+        return (ft_rotate(st_a, st_b, 1));
     if (ft_strcmp(inst, "rra"))
-        return (ft_sa(st_a, st_b));
+        return (ft_rotate(st_a, NULL, 2));
     if (ft_strcmp(inst, "rrb"))
-        return (ft_sa(st_a, st_b));
+        return (ft_rotate(st_b, NULL, 2));
     if (ft_strcmp(inst, "rrr"))
-        return (ft_sa(st_a, st_b));*/
+        return (ft_rotate(st_a, st_b, 2));
     return (0);
 }
 
@@ -391,20 +433,86 @@ int readinstructions(t_list **stack_a, t_list **stack_b)
     while ((ret = read(0, str, 5)) > 2)
     {
         if (str[0] == '\n')
-            break;
+            return (1);
         str[4] = '\0';
         str[ret - 1] = '\0';
         if (!check_instruction(stack_a, stack_b, str))
             return (reterr());
-        printf("ret = %i read: %s", ret, str);
     }
     return (1);
+}
+
+int freestacks(t_list **stack_a, t_list **stack_b)
+{
+    t_list *cp;
+
+    while ((*stack_a)->next)
+    {
+        cp = *stack_a;
+        *stack_a = (*stack_a)->next;
+        free(cp);
+    }
+    if (*stack_a)
+        free(*stack_a);
+    if (*stack_b)
+    {
+        while ((*stack_b)->next)
+        {
+            cp = *stack_b;
+            *stack_b = (*stack_b)->next;
+            free(cp);
+        }
+        free(*stack_b);
+        return (0);
+    }
+    return (1);
+}
+
+int check_stacks(t_list **stack_a, t_list **stack_b)
+{
+    t_list *cp;
+
+    cp = *stack_a;
+    if (cp->content > (cp->next)->content)
+    {
+        while (cp->next)
+        {
+            if (cp->content < (cp->next)->content)
+                return (0);
+            cp = cp->next;
+        }
+    }
+    else
+    {
+        while (cp->next)
+        {
+            if (cp->content > (cp->next)->content)
+                return (0);
+            cp = cp->next;
+        }
+    }
+    return (freestacks(stack_a, stack_b));
+}
+
+int ok_ko(int i)
+{
+    if (i == 1)
+    {
+        write(1, "OK", 3);
+        return (i);
+    }
+    else
+        write(1, "KO", 3);
+    return (i);
 }
 
 int main(int argc, char **argv)
 {
     t_list *stack_a;
     t_list *stack_b;
+    int i;
+    t_list *s_a;
+    t_list *s_b;
 
     stack_a = NULL;
     stack_b = NULL;
@@ -413,11 +521,26 @@ int main(int argc, char **argv)
     if (check_valid(&stack_a, argv, argc) == 0)
         return (0);
     readinstructions(&stack_a, &stack_b);
-    while ((stack_a)->next)
+    s_a = stack_a;
+    s_b = stack_b;
+    while ((s_a)->next)
     {
-        printf("%i\n", (stack_a)->content);
-        stack_a = (stack_a)->next;
+        printf("%i\n", (s_a)->content);
+        s_a = (s_a)->next;
     }
-    printf("%i\n", (stack_a)->content);
-    return (1);
+    printf("%i\n", (s_a)->content);
+    if (s_b) {
+        while ((s_b)->next) {
+            printf("   %i\n", (s_b)->content);
+            s_b = (s_b)->next;
+        }
+        printf("   %i\n", (s_b)->content);
+    }
+    else
+        printf("   %c\n", 'n');
+    if (stack_a && stack_a->next)
+        i = check_stacks(&stack_a, &stack_b);
+    else
+        i = freestacks(&stack_a, &stack_b);
+    return (ok_ko(i));
 }
