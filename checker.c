@@ -317,16 +317,88 @@ int check_valid(t_list **stack_a, char **av, int ac)
     return (argv);
 }*/
 
-void readinstructions(t_list *stack_a, t_list *stack_b)
+int ft_strcmp(char *str1, char *str2)
 {
-    char str[4];
+    int i;
 
-    read(0, str, 4);
-    printf("read: %s", str);
-    while (*str != '\n') {
-        read(0, str, 4);
-        printf("read: %s", str);
+    i = 0;
+    while (str1[i] && str2[i])
+    {
+        if (str1[i] != str2[i])
+            return (0);
+        i++;
     }
+    if (!str1[i] && !str2[i])
+        return (1);
+    return (0);
+}
+
+int ft_swap(t_list **lst1, t_list **lst2)
+{
+    int i;
+    int j;
+    t_list **lst;
+
+    lst = lst1;
+    while (lst)
+    {
+        if (*lst && (*lst)->next)
+        {
+            i = (*lst)->content;
+                j = ((*lst)->next)->content;
+                (*lst)->content = j;
+                ((*lst)->next)->content = i;
+        }
+        if (lst == lst2)
+            return (1);
+        lst = lst2;
+    }
+    return (1);
+}
+
+int check_instruction(t_list **st_a, t_list **st_b, char *inst)
+{
+    if (ft_strcmp(inst, "sa"))
+        return (ft_swap(st_a, NULL));
+    if (ft_strcmp(inst, "sb"))
+        return (ft_swap(st_b, NULL));
+    if (ft_strcmp(inst, "ss"))
+        return (ft_swap(st_a, st_b));
+    /*if (ft_strcmp(inst, "pa"))
+        return (ft_pa(st_a, st_b));
+    if (ft_strcmp(inst, "pb"))
+        return (ft_pb(st_a, st_b));
+    if (ft_strcmp(inst, "ra"))
+        return (ft_ra(st_a, st_b));
+    if (ft_strcmp(inst, "rb"))
+        return (ft_sa(st_a, st_b));
+    if (ft_strcmp(inst, "rr"))
+        return (ft_sa(st_a, st_b));
+    if (ft_strcmp(inst, "rra"))
+        return (ft_sa(st_a, st_b));
+    if (ft_strcmp(inst, "rrb"))
+        return (ft_sa(st_a, st_b));
+    if (ft_strcmp(inst, "rrr"))
+        return (ft_sa(st_a, st_b));*/
+    return (0);
+}
+
+int readinstructions(t_list **stack_a, t_list **stack_b)
+{
+    char str[5];
+    int ret;
+
+    while ((ret = read(0, str, 5)) > 2)
+    {
+        if (str[0] == '\n')
+            break;
+        str[4] = '\0';
+        str[ret - 1] = '\0';
+        if (!check_instruction(stack_a, stack_b, str))
+            return (reterr());
+        printf("ret = %i read: %s", ret, str);
+    }
+    return (1);
 }
 
 int main(int argc, char **argv)
@@ -340,7 +412,7 @@ int main(int argc, char **argv)
         return (0);
     if (check_valid(&stack_a, argv, argc) == 0)
         return (0);
-    readinstructions(stack_a, stack_b);
+    readinstructions(&stack_a, &stack_b);
     while ((stack_a)->next)
     {
         printf("%i\n", (stack_a)->content);

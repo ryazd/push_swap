@@ -30,7 +30,7 @@ int                 pars_argv(t_list **stack_a, char *str);
 void                ft_splitwhitespace(char *av, char ***new);
 int                 numstr(char *av);
 char                *makemas(char **av);
-void                readinstructions(t_list *stack_a, t_list *stack_b);
+int                 readinstructions(t_list **stack_a, t_list **stack_b);
 void                ft_freearray(char ***new);
 
 #endif //UNTITLED_CHECKER_H
