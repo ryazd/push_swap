@@ -98,9 +98,11 @@ int ft_strchr(char *str)
     return (i);
 }
 
-int reterr(void)
+int reterr(t_list **lst)
 {
-    write(1, "Error\n", 6);
+    if (*lst && lst)
+        freestacks(lst, NULL);
+    write(2, "Error\n", 6);
     return (0);
 }
 
@@ -267,7 +269,7 @@ int check_duplicates(t_list **stack_a)
             current2 = current2->next;
         }
         if (a > 1)
-            return (reterr());
+            return (reterr(stack_a));
         current1 = current1->next;
     }
     return (1);
@@ -284,13 +286,13 @@ int check_valid(t_list **stack_a, char **av, int ac)
         if (ft_strchr(av[i]))
         {
             if (!pars_argv(stack_a, av[i]))
-                return (reterr());
+                return (reterr(stack_a));
         }
         else
         {
             c = ft_atoi(av[i]);
             if (check_content(av[i]) == 0 || ((c < -2147483648) || (c > 2147483647)) || ft_strlen(av[i]) > 11)
-                return (reterr());
+                return (reterr(stack_a));
             ft_lstaddend(stack_a, ft_lstnew((int) c));
         }
         i++;
@@ -437,7 +439,7 @@ int readinstructions(t_list **stack_a, t_list **stack_b)
         str[4] = '\0';
         str[ret - 1] = '\0';
         if (!check_instruction(stack_a, stack_b, str))
-            return (reterr());
+            return (reterr(NULL));
     }
     return (1);
 }
@@ -446,15 +448,18 @@ int freestacks(t_list **stack_a, t_list **stack_b)
 {
     t_list *cp;
 
-    while ((*stack_a)->next)
+    if (stack_a && *stack_a)
     {
-        cp = *stack_a;
-        *stack_a = (*stack_a)->next;
-        free(cp);
-    }
-    if (*stack_a)
+        while ((*stack_a)->next)
+        {
+            cp = *stack_a;
+            *stack_a = (*stack_a)->next;
+            free(cp);
+        }
+        if (*stack_a)
         free(*stack_a);
-    if (*stack_b)
+    }
+    if (stack_b && *stack_b)
     {
         while ((*stack_b)->next)
         {
@@ -498,37 +503,23 @@ int ok_ko(int i)
 {
     if (i == 1)
     {
-        write(1, "OK", 3);
+        write(1, "OK\n", 4);
         return (i);
     }
     else
-        write(1, "KO", 3);
+        write(1, "KO\n", 4);
     return (i);
 }
 
-int main(int argc, char **argv)
+void print(t_list *s_a, t_list *s_b)
 {
-    t_list *stack_a;
-    t_list *stack_b;
-    int i;
-    t_list *s_a;
-    t_list *s_b;
-
-    stack_a = NULL;
-    stack_b = NULL;
-    if (argc == 1)
-        return (0);
-    if (check_valid(&stack_a, argv, argc) == 0)
-        return (0);
-    readinstructions(&stack_a, &stack_b);
-    s_a = stack_a;
-    s_b = stack_b;
-    while ((s_a)->next)
-    {
+    if (s_a) {
+        while ((s_a)->next) {
+            printf("%i\n", (s_a)->content);
+            s_a = (s_a)->next;
+        }
         printf("%i\n", (s_a)->content);
-        s_a = (s_a)->next;
     }
-    printf("%i\n", (s_a)->content);
     if (s_b) {
         while ((s_b)->next) {
             printf("   %i\n", (s_b)->content);
@@ -538,6 +529,22 @@ int main(int argc, char **argv)
     }
     else
         printf("   %c\n", 'n');
+}
+
+int main(int argc, char **argv)
+{
+    t_list *stack_a;
+    t_list *stack_b;
+    int i;
+
+    stack_a = NULL;
+    stack_b = NULL;
+    if (argc == 1)
+        return (0);
+    if (check_valid(&stack_a, argv, argc) == 0)
+        return (0);
+    readinstructions(&stack_a, &stack_b);
+    //print(stack_a, stack_b);
     if (stack_a && stack_a->next)
         i = check_stacks(&stack_a, &stack_b);
     else

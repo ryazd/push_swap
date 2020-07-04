@@ -25,7 +25,7 @@ int                 check_content(char *content);
 static int	        check_overflow(int sign, long long result, const char *str);
 int                 check_duplicates(t_list **stack_a);
 int                 ft_strchr(char *str);
-int                 reterr(void);
+int                 reterr(t_list **lst);
 int                 pars_argv(t_list **stack_a, char *str);
 void                ft_splitwhitespace(char *av, char ***new);
 int                 numstr(char *av);
@@ -38,6 +38,7 @@ int                 ft_swap(t_list **lst1, t_list **lst2);
 int                 ft_push(t_list **lst1, t_list **lst2);
 int                 ft_rotate(t_list **lst1, t_list **lst2, int i);
 int                 freestacks(t_list **stack_a, t_list **stack_b);
-
+int                 check_stacks(t_list **stack_a, t_list **stack_b);
+int                 ok_ko(int i);
 
 #endif //UNTITLED_CHECKER_H
