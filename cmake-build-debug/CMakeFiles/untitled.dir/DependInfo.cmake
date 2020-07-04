@@ -5,6 +5,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/hluthor/push_swap/checker.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker.c.o"
+  "/Users/hluthor/push_swap/checker1.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker1.c.o"
+  "/Users/hluthor/push_swap/checker2.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker2.c.o"
+  "/Users/hluthor/push_swap/checker3.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker3.c.o"
+  "/Users/hluthor/push_swap/checker4.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker4.c.o"
+  "/Users/hluthor/push_swap/checker5.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker5.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

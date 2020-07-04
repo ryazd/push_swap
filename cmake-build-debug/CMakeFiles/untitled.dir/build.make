@@ -70,17 +70,92 @@ CMakeFiles/untitled.dir/checker.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker.c -o CMakeFiles/untitled.dir/checker.c.s
 
+CMakeFiles/untitled.dir/checker1.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/checker1.c.o: ../checker1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled.dir/checker1.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/checker1.c.o   -c /Users/hluthor/push_swap/checker1.c
+
+CMakeFiles/untitled.dir/checker1.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/checker1.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/checker1.c > CMakeFiles/untitled.dir/checker1.c.i
+
+CMakeFiles/untitled.dir/checker1.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker1.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker1.c -o CMakeFiles/untitled.dir/checker1.c.s
+
+CMakeFiles/untitled.dir/checker2.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/checker2.c.o: ../checker2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled.dir/checker2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/checker2.c.o   -c /Users/hluthor/push_swap/checker2.c
+
+CMakeFiles/untitled.dir/checker2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/checker2.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/checker2.c > CMakeFiles/untitled.dir/checker2.c.i
+
+CMakeFiles/untitled.dir/checker2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker2.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker2.c -o CMakeFiles/untitled.dir/checker2.c.s
+
+CMakeFiles/untitled.dir/checker3.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/checker3.c.o: ../checker3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled.dir/checker3.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/checker3.c.o   -c /Users/hluthor/push_swap/checker3.c
+
+CMakeFiles/untitled.dir/checker3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/checker3.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/checker3.c > CMakeFiles/untitled.dir/checker3.c.i
+
+CMakeFiles/untitled.dir/checker3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker3.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker3.c -o CMakeFiles/untitled.dir/checker3.c.s
+
+CMakeFiles/untitled.dir/checker4.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/checker4.c.o: ../checker4.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled.dir/checker4.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/checker4.c.o   -c /Users/hluthor/push_swap/checker4.c
+
+CMakeFiles/untitled.dir/checker4.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/checker4.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/checker4.c > CMakeFiles/untitled.dir/checker4.c.i
+
+CMakeFiles/untitled.dir/checker4.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker4.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker4.c -o CMakeFiles/untitled.dir/checker4.c.s
+
+CMakeFiles/untitled.dir/checker5.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/checker5.c.o: ../checker5.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/untitled.dir/checker5.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/checker5.c.o   -c /Users/hluthor/push_swap/checker5.c
+
+CMakeFiles/untitled.dir/checker5.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/checker5.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/checker5.c > CMakeFiles/untitled.dir/checker5.c.i
+
+CMakeFiles/untitled.dir/checker5.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker5.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker5.c -o CMakeFiles/untitled.dir/checker5.c.s
+
 # Object files for target untitled
 untitled_OBJECTS = \
-"CMakeFiles/untitled.dir/checker.c.o"
+"CMakeFiles/untitled.dir/checker.c.o" \
+"CMakeFiles/untitled.dir/checker1.c.o" \
+"CMakeFiles/untitled.dir/checker2.c.o" \
+"CMakeFiles/untitled.dir/checker3.c.o" \
+"CMakeFiles/untitled.dir/checker4.c.o" \
+"CMakeFiles/untitled.dir/checker5.c.o"
 
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
 
 untitled: CMakeFiles/untitled.dir/checker.c.o
+untitled: CMakeFiles/untitled.dir/checker1.c.o
+untitled: CMakeFiles/untitled.dir/checker2.c.o
+untitled: CMakeFiles/untitled.dir/checker3.c.o
+untitled: CMakeFiles/untitled.dir/checker4.c.o
+untitled: CMakeFiles/untitled.dir/checker5.c.o
 untitled: CMakeFiles/untitled.dir/build.make
 untitled: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable untitled"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable untitled"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

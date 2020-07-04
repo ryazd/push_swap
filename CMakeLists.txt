@@ -3,4 +3,4 @@ project(untitled C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(untitled checker.c)
+add_executable(untitled checker.c checker1.c checker2.c checker3.c checker4.c checker5.c)

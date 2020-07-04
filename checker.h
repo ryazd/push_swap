@@ -40,5 +40,8 @@ int                 ft_rotate(t_list **lst1, t_list **lst2, int i);
 int                 freestacks(t_list **stack_a, t_list **stack_b);
 int                 check_stacks(t_list **stack_a, t_list **stack_b);
 int                 ok_ko(int i);
+int                 sort(t_list **stack_a, t_list **stack_b);
+int                 freestacks_b(t_list **stack_b);
+int                 ft_lstnum(t_list **lst);
 
 #endif //UNTITLED_CHECKER_H

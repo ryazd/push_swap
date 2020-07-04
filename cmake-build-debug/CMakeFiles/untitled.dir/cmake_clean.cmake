@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/checker.c.o"
+  "CMakeFiles/untitled.dir/checker1.c.o"
+  "CMakeFiles/untitled.dir/checker2.c.o"
+  "CMakeFiles/untitled.dir/checker3.c.o"
+  "CMakeFiles/untitled.dir/checker4.c.o"
+  "CMakeFiles/untitled.dir/checker5.c.o"
   "untitled"
   "untitled.pdb"
 )

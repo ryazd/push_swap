@@ -150,6 +150,141 @@ checker.c.s:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker.c.s
 .PHONY : checker.c.s
 
+checker1.o: checker1.c.o
+
+.PHONY : checker1.o
+
+# target to build an object file
+checker1.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker1.c.o
+.PHONY : checker1.c.o
+
+checker1.i: checker1.c.i
+
+.PHONY : checker1.i
+
+# target to preprocess a source file
+checker1.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker1.c.i
+.PHONY : checker1.c.i
+
+checker1.s: checker1.c.s
+
+.PHONY : checker1.s
+
+# target to generate assembly for a file
+checker1.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker1.c.s
+.PHONY : checker1.c.s
+
+checker2.o: checker2.c.o
+
+.PHONY : checker2.o
+
+# target to build an object file
+checker2.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker2.c.o
+.PHONY : checker2.c.o
+
+checker2.i: checker2.c.i
+
+.PHONY : checker2.i
+
+# target to preprocess a source file
+checker2.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker2.c.i
+.PHONY : checker2.c.i
+
+checker2.s: checker2.c.s
+
+.PHONY : checker2.s
+
+# target to generate assembly for a file
+checker2.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker2.c.s
+.PHONY : checker2.c.s
+
+checker3.o: checker3.c.o
+
+.PHONY : checker3.o
+
+# target to build an object file
+checker3.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker3.c.o
+.PHONY : checker3.c.o
+
+checker3.i: checker3.c.i
+
+.PHONY : checker3.i
+
+# target to preprocess a source file
+checker3.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker3.c.i
+.PHONY : checker3.c.i
+
+checker3.s: checker3.c.s
+
+.PHONY : checker3.s
+
+# target to generate assembly for a file
+checker3.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker3.c.s
+.PHONY : checker3.c.s
+
+checker4.o: checker4.c.o
+
+.PHONY : checker4.o
+
+# target to build an object file
+checker4.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker4.c.o
+.PHONY : checker4.c.o
+
+checker4.i: checker4.c.i
+
+.PHONY : checker4.i
+
+# target to preprocess a source file
+checker4.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker4.c.i
+.PHONY : checker4.c.i
+
+checker4.s: checker4.c.s
+
+.PHONY : checker4.s
+
+# target to generate assembly for a file
+checker4.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker4.c.s
+.PHONY : checker4.c.s
+
+checker5.o: checker5.c.o
+
+.PHONY : checker5.o
+
+# target to build an object file
+checker5.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.o
+.PHONY : checker5.c.o
+
+checker5.i: checker5.c.i
+
+.PHONY : checker5.i
+
+# target to preprocess a source file
+checker5.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.i
+.PHONY : checker5.c.i
+
+checker5.s: checker5.c.s
+
+.PHONY : checker5.s
+
+# target to generate assembly for a file
+checker5.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.s
+.PHONY : checker5.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +297,21 @@ help:
 	@echo "... checker.o"
 	@echo "... checker.i"
 	@echo "... checker.s"
+	@echo "... checker1.o"
+	@echo "... checker1.i"
+	@echo "... checker1.s"
+	@echo "... checker2.o"
+	@echo "... checker2.i"
+	@echo "... checker2.s"
+	@echo "... checker3.o"
+	@echo "... checker3.i"
+	@echo "... checker3.s"
+	@echo "... checker4.o"
+	@echo "... checker4.i"
+	@echo "... checker4.s"
+	@echo "... checker5.o"
+	@echo "... checker5.i"
+	@echo "... checker5.s"
 .PHONY : help
 
 
