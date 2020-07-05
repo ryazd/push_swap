@@ -123,33 +123,6 @@ untitled/fast:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
-checker.o: checker.c.o
-
-.PHONY : checker.o
-
-# target to build an object file
-checker.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker.c.o
-.PHONY : checker.c.o
-
-checker.i: checker.c.i
-
-.PHONY : checker.i
-
-# target to preprocess a source file
-checker.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker.c.i
-.PHONY : checker.c.i
-
-checker.s: checker.c.s
-
-.PHONY : checker.s
-
-# target to generate assembly for a file
-checker.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker.c.s
-.PHONY : checker.c.s
-
 checker1.o: checker1.c.o
 
 .PHONY : checker1.o
@@ -285,6 +258,33 @@ checker5.c.s:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.s
 .PHONY : checker5.c.s
 
+push_swap.o: push_swap.c.o
+
+.PHONY : push_swap.o
+
+# target to build an object file
+push_swap.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/push_swap.c.o
+.PHONY : push_swap.c.o
+
+push_swap.i: push_swap.c.i
+
+.PHONY : push_swap.i
+
+# target to preprocess a source file
+push_swap.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/push_swap.c.i
+.PHONY : push_swap.c.i
+
+push_swap.s: push_swap.c.s
+
+.PHONY : push_swap.s
+
+# target to generate assembly for a file
+push_swap.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/push_swap.c.s
+.PHONY : push_swap.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -294,9 +294,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... untitled"
-	@echo "... checker.o"
-	@echo "... checker.i"
-	@echo "... checker.s"
 	@echo "... checker1.o"
 	@echo "... checker1.i"
 	@echo "... checker1.s"
@@ -312,6 +309,9 @@ help:
 	@echo "... checker5.o"
 	@echo "... checker5.i"
 	@echo "... checker5.s"
+	@echo "... push_swap.o"
+	@echo "... push_swap.i"
+	@echo "... push_swap.s"
 .PHONY : help
 
 

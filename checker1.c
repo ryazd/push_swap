@@ -28,12 +28,13 @@ int ft_strcmp(char *str1, char *str2)
     return (0);
 }
 
-int ft_swap(t_list **lst1, t_list **lst2)
+int ft_swap(t_list **lst1, t_list **lst2, char *str)
 {
     int i;
     int j;
     t_list **lst;
 
+    print_action(str);
     lst = lst1;
     while (lst)
     {
@@ -51,10 +52,11 @@ int ft_swap(t_list **lst1, t_list **lst2)
     return (1);
 }
 
-int ft_push(t_list **lst1, t_list **lst2)
+int ft_push(t_list **lst1, t_list **lst2, char *str)
 {
     t_list *cp;
 
+    print_action(str);
     if (lst2 && *lst2)
     {
         cp = *lst2;
@@ -65,11 +67,12 @@ int ft_push(t_list **lst1, t_list **lst2)
     return (1);
 }
 
-int ft_rotate(t_list **lst1, t_list **lst2, int i)
+int ft_rotate(t_list **lst1, t_list **lst2, int i, char *str)
 {
     t_list *cp;
 
     cp = *lst1;
+    print_action(str);
     if (lst1 && *lst1 && (*lst1)->next && i == 1)
     {
         while (cp->next)
@@ -89,34 +92,34 @@ int ft_rotate(t_list **lst1, t_list **lst2, int i)
         cp->next = NULL;
     }
     if (lst2)
-        return (ft_rotate(lst2, NULL, i));
+        return (ft_rotate(lst2, NULL, i, ""));
     return (1);
 }
 
 int check_instruction(t_list **st_a, t_list **st_b, char *inst)
 {
     if (ft_strcmp(inst, "sa"))
-        return (ft_swap(st_a, NULL));
+        return (ft_swap(st_a, NULL, ""));
     if (ft_strcmp(inst, "sb"))
-        return (ft_swap(st_b, NULL));
+        return (ft_swap(st_b, NULL, ""));
     if (ft_strcmp(inst, "ss"))
-        return (ft_swap(st_a, st_b));
+        return (ft_swap(st_a, st_b, ""));
     if (ft_strcmp(inst, "pa"))
-        return (ft_push(st_a, st_b));
+        return (ft_push(st_a, st_b, ""));
     if (ft_strcmp(inst, "pb"))
-        return (ft_push(st_b, st_a));
+        return (ft_push(st_b, st_a, ""));
     if (ft_strcmp(inst, "ra"))
-        return (ft_rotate(st_a, NULL, 1));
+        return (ft_rotate(st_a, NULL, 1, ""));
     if (ft_strcmp(inst, "rb"))
-        return (ft_rotate(st_b, NULL, 1));
+        return (ft_rotate(st_b, NULL, 1, ""));
     if (ft_strcmp(inst, "rr"))
-        return (ft_rotate(st_a, st_b, 1));
+        return (ft_rotate(st_a, st_b, 1, ""));
     if (ft_strcmp(inst, "rra"))
-        return (ft_rotate(st_a, NULL, 2));
+        return (ft_rotate(st_a, NULL, 2, ""));
     if (ft_strcmp(inst, "rrb"))
-        return (ft_rotate(st_b, NULL, 2));
+        return (ft_rotate(st_b, NULL, 2, ""));
     if (ft_strcmp(inst, "rrr"))
-        return (ft_rotate(st_a, st_b, 2));
+        return (ft_rotate(st_a, st_b, 2, ""));
     return (0);
 }
 

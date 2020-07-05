@@ -57,18 +57,18 @@ include CMakeFiles/untitled.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled.dir/flags.make
 
-CMakeFiles/untitled.dir/checker.c.o: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/checker.c.o: ../checker.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled.dir/checker.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/checker.c.o   -c /Users/hluthor/push_swap/checker.c
+CMakeFiles/untitled.dir/push_swap.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/push_swap.c.o: ../push_swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled.dir/push_swap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/push_swap.c.o   -c /Users/hluthor/push_swap/push_swap.c
 
-CMakeFiles/untitled.dir/checker.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/checker.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/checker.c > CMakeFiles/untitled.dir/checker.c.i
+CMakeFiles/untitled.dir/push_swap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/push_swap.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hluthor/push_swap/push_swap.c > CMakeFiles/untitled.dir/push_swap.c.i
 
-CMakeFiles/untitled.dir/checker.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/checker.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/checker.c -o CMakeFiles/untitled.dir/checker.c.s
+CMakeFiles/untitled.dir/push_swap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/push_swap.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hluthor/push_swap/push_swap.c -o CMakeFiles/untitled.dir/push_swap.c.s
 
 CMakeFiles/untitled.dir/checker1.c.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/checker1.c.o: ../checker1.c
@@ -137,7 +137,7 @@ CMakeFiles/untitled.dir/checker5.c.s: cmake_force
 
 # Object files for target untitled
 untitled_OBJECTS = \
-"CMakeFiles/untitled.dir/checker.c.o" \
+"CMakeFiles/untitled.dir/push_swap.c.o" \
 "CMakeFiles/untitled.dir/checker1.c.o" \
 "CMakeFiles/untitled.dir/checker2.c.o" \
 "CMakeFiles/untitled.dir/checker3.c.o" \
@@ -147,7 +147,7 @@ untitled_OBJECTS = \
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
 
-untitled: CMakeFiles/untitled.dir/checker.c.o
+untitled: CMakeFiles/untitled.dir/push_swap.c.o
 untitled: CMakeFiles/untitled.dir/checker1.c.o
 untitled: CMakeFiles/untitled.dir/checker2.c.o
 untitled: CMakeFiles/untitled.dir/checker3.c.o

@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hluthor/push_swap/checker.c">
-			<Option target="untitled"/>
-		</Unit>
-		<Unit filename="/Users/hluthor/push_swap/checker.h">
-			<Option target="untitled"/>
-		</Unit>
 		<Unit filename="/Users/hluthor/push_swap/checker1.c">
 			<Option target="untitled"/>
 		</Unit>
@@ -99,6 +93,9 @@
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="/Users/hluthor/push_swap/checker5.c">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/Users/hluthor/push_swap/push_swap.c">
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="/Users/hluthor/push_swap/CMakeLists.txt">

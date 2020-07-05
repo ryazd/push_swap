@@ -37,7 +37,7 @@ int ft_mas(int **mas, t_list *lst)
     int j;
 
     j = 0;
-    i = ft_ltsnum(&lst);
+    i = ft_lstnum(&lst);
     *mas = (int *)malloc(sizeof(int) * i);
     while (j < i)
     {
@@ -72,51 +72,150 @@ void ft_sortmas(int **mas, int i)
     }
 }
 
-int ft_massearch(int c, int i, int j, int *mas)
+int ft_massearch(int c, int nach, int con, int *mas)
 {
-    while (i < j)
+    while (nach < con)
     {
-        if (mas[i] == c)
+        if (mas[nach] == c)
             return (1);
-        i++;
+        nach++;
     }
     return (0);
 }
 
-void ft_first_second(int *mas, int i, t_list **s_a, t_list **s_b, int b)
+void check_stc(t_list **lst)
+{
+    if (lst && *lst && (*lst)->next)
+    {
+        if ((*lst)->content < (((*lst)->next)->content))
+            ft_swap(lst, NULL, "sb");
+    }
+}
+
+int ft_num_of_action(t_list **s_a, t_list **s_b, int i, int j)
+{
+    int k;
+
+    k = ft_lstnum(s_a) + 1;
+    if ((i - 1) < (k - j))
+    {
+        while (i > 0)
+        {
+            ft_rotate(s_a, NULL, 1, "ra");
+            i--;
+        }
+    }
+    else
+    {
+        while (j < k)
+        {
+            ft_rotate(s_a, NULL, 2, "rra");
+            j++;
+        }
+    }
+    ft_push(s_b, s_a, "pb");
+    check_stc(s_b);
+    return (1);
+}
+
+int ft_first_second(int *mas, int con, t_list **s_a, t_list **s_b, int nach)
 {
     int j;
     int k;
     int c;
+    int r;
     t_list *cp1;
 
-    j = 1;
+    j = 0;
     c = 0;
+    r = 0;
     cp1 = *s_a;
-    while (j < (ft_lstnum(s_a) / 2))
+    while (j < (ft_lstnum(s_a) / 2) && c == 0)
     {
-        ft_massearch(cp1->content, b, i, mas) ? break() : j++;
+        ft_massearch(cp1->content, nach, con, mas) ? c++ : j++;
         cp1 = cp1->next;
     }
-    k = j;
-    while (k < i)
+    k = j + 1;
+    while (cp1)
     {
-        ft_massearch(cp1->content, b, i, mas) ? c = k : k++;
+        ft_massearch(cp1->content, nach, con, mas) ? r = k && k++ : k++;
         cp1 = cp1->next;
     }
+    if (c == 0 && r == 0)
+        return (0);
+    return (ft_num_of_action(s_a, s_b, j, r + 1));
 }
 
-int sort(t_list **stack_a, t_list **stack_b)
+int search_nach_con(int sch, int *con, int kol, int i)
+{
+    int nach;
+
+    if (sch == 1)
+        nach = 0;
+    else
+        nach = *con;
+    if (kol == sch)
+        *con = i;
+    else
+        *con = i/kol;
+    return (nach);
+}
+
+int sort(t_list **stack_a, t_list **stack_b, int b)
 {
     int *mas;
     int i;
+    int sch;
+    int con;
+    int nach;
 
     i = ft_mas(&mas, *stack_a);
     ft_sortmas(&mas, i);
-    while (ft_lstnum(stack_a) > 3)
-        ft_first_second(mas, i, stack_a, stack_b);
-
+    sch = 1;
+    while (sch <= b)
+    {
+        nach = search_nach_con(sch, &con, b, i);
+        while (ft_first_second(mas, con, stack_a, stack_b, nach))
+            sch += 0;
+        sch++;
+    }
+    return (0);
 }
+
+void print(t_list *a, t_list *b)
+{
+   while (a)
+   {
+       printf("%i\n", a->content);
+       a = a->next;
+   }
+   while (b)
+   {
+       printf("          %i\n", b->content);
+       b = b->next;
+   }
+}
+
+int print_action(char *str)
+{
+    int i;
+    int j;
+
+    j = ft_strlen(str);
+    i = 0;
+    if (j > 0)
+    {
+        while (i < j)
+        {
+            write(1, &(str[i]), 1);
+            i++;
+        }
+        write(1, "\n", 3);
+    }
+    return (0);
+}
+
+
 
 int main(int argc, char **argv)
 {
@@ -129,5 +228,6 @@ int main(int argc, char **argv)
         return (0);
     if (check_valid(&stack_a, argv, argc) == 0)
         return (0);
-    sort(&stack_a, &stack_b);
+    sort(&stack_a, &stack_b, 2);
+    print(stack_a, stack_b);
 }

@@ -34,14 +34,16 @@ int                 readinstructions(t_list **stack_a, t_list **stack_b);
 void                ft_freearray(char ***new);
 int                 check_instruction(t_list **st_a, t_list **st_b, char *inst);
 int                 ft_strcmp(char *str1, char *str2);
-int                 ft_swap(t_list **lst1, t_list **lst2);
-int                 ft_push(t_list **lst1, t_list **lst2);
-int                 ft_rotate(t_list **lst1, t_list **lst2, int i);
+int                 ft_swap(t_list **lst1, t_list **lst2, char *str);
+int                 ft_push(t_list **lst1, t_list **lst2, char *str);
+int                 ft_rotate(t_list **lst1, t_list **lst2, int i, char *str);
 int                 freestacks(t_list **stack_a, t_list **stack_b);
 int                 check_stacks(t_list **stack_a, t_list **stack_b);
 int                 ok_ko(int i);
-int                 sort(t_list **stack_a, t_list **stack_b);
 int                 freestacks_b(t_list **stack_b);
 int                 ft_lstnum(t_list **lst);
+int                 ft_num_of_action(t_list **s_a, t_list **s_b, int i, int j);
+int                 sort(t_list **stack_a, t_list **stack_b, int b);
+int                 print_action(char *str);
 
 #endif //UNTITLED_CHECKER_H
