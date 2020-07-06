@@ -67,7 +67,7 @@ int ok_ko(int i)
     return (i);
 }
 
-void print(t_list *s_a, t_list *s_b)
+void print1(t_list *s_a, t_list *s_b)
 {
     if (s_a) {
         while ((s_a)->next) {
