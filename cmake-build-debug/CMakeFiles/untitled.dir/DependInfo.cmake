@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/hluthor/push_swap/checker3.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker3.c.o"
   "/Users/hluthor/push_swap/checker4.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker4.c.o"
   "/Users/hluthor/push_swap/checker5.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/checker5.c.o"
+  "/Users/hluthor/push_swap/print_action.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/print_action.c.o"
   "/Users/hluthor/push_swap/push_swap.c" "/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir/push_swap.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

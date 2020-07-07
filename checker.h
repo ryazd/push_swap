@@ -44,6 +44,24 @@ int                 freestacks_b(t_list **stack_b);
 int                 ft_lstnum(t_list **lst);
 int                 ft_num_of_action(t_list **s_a, t_list **s_b, int i, int j);
 int                 sort(t_list **stack_a, t_list **stack_b, int b);
-int                 print_action(char *str);
+int                 sort_stc3(t_list **lst);
+int                 ft_mas(int **mas, t_list *lst);
+void                ft_sortmas(int **mas, int i);
+int                 ft_massearch(int c, int nach, int con, int *mas);
+void                check_stc(t_list **lst);
+int                 ft_first_second(int *mas, int *arr, t_list **s_a, t_list **s_b);
+int part_selection(t_list **lst, int i);
+int search_nach_con(int sch, int *con, int kol, int i);
+int naction_a(t_list *s_a, int cont);
+int naction_b(t_list *s_a, t_list *s_b, int i, int cont);
+void vsp(t_list **s_a, t_list **s_b, int i);
+void vsp1(t_list **lst, int i);
+int vsp2(t_list **s_b, t_list *cp, int k);
+int vsp3(t_list **s_b, t_list *cp, int k);
+void swap_a(t_list **s_a, t_list **s_b, int k);
+void sort_b(t_list **s_a, t_list **s_b, int j, int i);
+int print_action(char *str);
+int check_sort(t_list *lst);
+
 
 #endif //UNTITLED_CHECKER_H

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/checker3.c.o"
   "CMakeFiles/untitled.dir/checker4.c.o"
   "CMakeFiles/untitled.dir/checker5.c.o"
+  "CMakeFiles/untitled.dir/print_action.c.o"
   "CMakeFiles/untitled.dir/push_swap.c.o"
   "untitled"
   "untitled.pdb"

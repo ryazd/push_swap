@@ -258,6 +258,33 @@ checker5.c.s:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.s
 .PHONY : checker5.c.s
 
+print_action.o: print_action.c.o
+
+.PHONY : print_action.o
+
+# target to build an object file
+print_action.c.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/print_action.c.o
+.PHONY : print_action.c.o
+
+print_action.i: print_action.c.i
+
+.PHONY : print_action.i
+
+# target to preprocess a source file
+print_action.c.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/print_action.c.i
+.PHONY : print_action.c.i
+
+print_action.s: print_action.c.s
+
+.PHONY : print_action.s
+
+# target to generate assembly for a file
+print_action.c.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/print_action.c.s
+.PHONY : print_action.c.s
+
 push_swap.o: push_swap.c.o
 
 .PHONY : push_swap.o
@@ -309,6 +336,9 @@ help:
 	@echo "... checker5.o"
 	@echo "... checker5.i"
 	@echo "... checker5.s"
+	@echo "... print_action.o"
+	@echo "... print_action.i"
+	@echo "... print_action.s"
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"

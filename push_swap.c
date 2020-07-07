@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "checker.h"
-
+/*
 int ft_lstnum(t_list **lst)
 {
     int i;
@@ -118,7 +118,7 @@ int ft_num_of_action(t_list **s_a, t_list **s_b, int i, int j)
     return (1);
 }
 
-int ft_first_second(int *mas, int con, t_list **s_a, t_list **s_b, int nach)
+int ft_first_second(int *mas, int *arr, t_list **s_a, t_list **s_b)
 {
     int j;
     int k;
@@ -132,13 +132,13 @@ int ft_first_second(int *mas, int con, t_list **s_a, t_list **s_b, int nach)
     cp1 = *s_a;
     while (j < (ft_lstnum(s_a) / 2) && c == 0)
     {
-        ft_massearch(cp1->content, nach, con, mas) ? c++ : j++;
+        ft_massearch(cp1->content, arr[0], arr[1], mas) ? c++ : j++;
         cp1 = cp1->next;
     }
     k = j + 1;
     while (cp1)
     {
-        ft_massearch(cp1->content, nach, con, mas) ? r = k && k++ : k++;
+        ft_massearch(cp1->content, arr[0], arr[1], mas) ? r = k && k++ : k++;
         cp1 = cp1->next;
     }
     if (c == 0 && r == 0)
@@ -196,7 +196,6 @@ void vsp(t_list **s_a, t_list **s_b, int i)
 {
     int c;
 
-    //write(1, "vsp  vsp\n", 10);
     if (i <= (ft_lstnum(s_a) / 2))
     {
         c = i;
@@ -220,7 +219,6 @@ void vsp(t_list **s_a, t_list **s_b, int i)
 
 void vsp1(t_list **lst, int i)
 {
-    //write(1, "vsp1  vsp1\n", 12);
     if (i <= ((ft_lstnum(lst) / 2) + 1))
     {
         while (i-- > 1)
@@ -236,7 +234,6 @@ void vsp1(t_list **lst, int i)
 int vsp2(t_list **s_b, t_list *cp, int k)
 {
     int i;
-
 
     i = k;
     while ((ft_lstnum(s_b) - i > 0)) {
@@ -280,7 +277,6 @@ void swap_a(t_list **s_a, t_list **s_b, int k)
     int i;
     t_list *cp;
 
-    i = k;
     cp = *s_a;
     if (k <= (ft_lstnum(s_b) / 2))
     {
@@ -326,23 +322,26 @@ int sort(t_list **stack_a, t_list **stack_b, int b)
     int *mas;
     int i;
     int sch;
-    int con;
-    int nach;
+    int *arr;
 
+    arr = (int *)malloc(sizeof(int) * 2);
     i = ft_mas(&mas, *stack_a);
     ft_sortmas(&mas, i);
     sch = 1;
     while (sch <= b)
     {
-        nach = search_nach_con(sch, &con, b, i);
-        while (ft_first_second(mas, con, stack_a, stack_b, nach))
+        arr[0] = search_nach_con(sch, &(arr[1]), b, i);
+        while (ft_first_second(mas, arr, stack_a, stack_b))
             sch += 0;
         sch++;
     }
+    sort_stc3(stack_a);
     sort_b(stack_a, stack_b, 0, 0);
+    free(mas);
+    free(arr);
     return (0);
 }
-
+*/
 void print(t_list *a, t_list *b)
 {
    while (a)
@@ -357,7 +356,7 @@ void print(t_list *a, t_list *b)
    }
 }
 
-int print_action(char *str)
+/*int print_action(char *str)
 {
     int i;
     int j;
@@ -371,18 +370,63 @@ int print_action(char *str)
             write(1, &(str[i]), 1);
             i++;
         }
-        write(1, "\n", 3);
+        write(1, "\n", 2);
     }
     return (0);
 }
+*/
+int check_sort(t_list *lst)
+{
+    while (lst->next)
+    {
+        if (lst->content > (lst->next)->content)
+            return (0);
+        lst = lst->next;
+    }
+    return (1);
+}
 
+int sort_stc3(t_list **lst)
+{
+    t_list *cp;
+    t_list *cp1;
 
+    cp = (*lst)->next;
+    cp1 = cp->next;
+    if (check_sort(*lst) == 0)
+    {
+        if ((*lst)->content < cp->content && cp->content > cp1->content && (*lst)->content < cp1->content)
+            return (ft_rotate(lst, NULL, 2, "rra") + ft_swap(lst, NULL, "sa"));
+        if ((*lst)->content > cp->content && cp->content > cp1->content)
+            return (ft_rotate(lst, NULL, 1, "ra") + ft_swap(lst, NULL, "sa"));
+        if ((*lst)->content > cp->content && cp->content < cp1->content && (*lst)->content > cp1->content)
+            return (ft_rotate(lst, NULL, 1, "ra"));
+        if ((*lst)->content > cp->content && cp->content < cp1->content)
+            return (ft_swap(lst, NULL, "sa"));
+        if ((*lst)->content < cp->content && cp->content > cp1->content)
+            return (ft_rotate(lst, NULL, 2, "rra"));
+    }
+    return (1);
+}
+
+int part_selection(t_list **lst, int i)
+{
+    if (i == 2)
+        return (ft_swap(lst, NULL, "sa") - 1);
+    if (i == 3)
+        return (sort_stc3(lst) - 1);
+    if (i > 5 && i < 90)
+        return (2);
+    if (i > 90 && i < 400)
+        return (5);
+    return (11);
+}
 
 int main(int argc, char **argv)
 {
     t_list *stack_a;
     t_list *stack_b;
-
+    int b;
 
     stack_a = NULL;
     stack_b = NULL;
@@ -390,6 +434,12 @@ int main(int argc, char **argv)
         return (0);
     if (check_valid(&stack_a, argv, argc) == 0)
         return (0);
-    sort(&stack_a, &stack_b, 2);
+    if (!check_sort(stack_a))
+    {
+        if ((b = part_selection(&stack_a, ft_lstnum(&stack_a))) > 0)
+            sort(&stack_a, &stack_b, b);
+    }
     print(stack_a, stack_b);
+    freestacks(&stack_a, &stack_b);
+    return (0);
 }
