@@ -6,7 +6,7 @@
 /*   By: hluthor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 13:08:24 by hluthor           #+#    #+#             */
-/*   Updated: 2020/07/07 18:06:49 by hluthor          ###   ########.fr       */
+/*   Updated: 2020/07/08 17:51:54 by hluthor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,30 +55,6 @@ int			ok_ko(int i)
 	return (i);
 }
 
-void		print1(t_list *s_a, t_list *s_b)
-{
-	if (s_a)
-	{
-		while ((s_a)->next)
-		{
-			printf("%i\n", (s_a)->content);
-			s_a = (s_a)->next;
-		}
-		printf("%i\n", (s_a)->content);
-	}
-	if (s_b)
-	{
-		while ((s_b)->next)
-		{
-			printf("   %i\n", (s_b)->content);
-			s_b = (s_b)->next;
-		}
-		printf("   %i\n", (s_b)->content);
-	}
-	else
-		printf("   %c\n", 'n');
-}
-
 int			main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -92,7 +68,6 @@ int			main(int argc, char **argv)
 	if (check_valid(&stack_a, argv, argc) == 0)
 		return (0);
 	readinstructions(&stack_a, &stack_b);
-	//print(stack_a, stack_b);
 	if (stack_a && stack_a->next)
 		i = check_stacks(&stack_a, &stack_b);
 	else

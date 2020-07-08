@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort3.c                                            :+:      :+:    :+:   */
+/*   print_action.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hluthor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 17:18:37 by hluthor           #+#    #+#             */
-/*   Updated: 2020/07/08 17:25:32 by hluthor          ###   ########.fr       */
+/*   Created: 2020/07/08 15:35:41 by hluthor           #+#    #+#             */
+/*   Updated: 2020/07/08 17:38:59 by hluthor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int			ft_lstnum(t_list **lst)
+int		print_action(char *str)
 {
-	int		i;
-	t_list	*cp;
+	int	i;
+	int	j;
 
+	j = ft_strlen(str);
 	i = 0;
-	if (lst && *lst)
+	if (j > 0)
 	{
-		i++;
-		cp = *lst;
-		while (cp->next)
+		while (i < j)
 		{
-			cp = cp->next;
+			write(1, &(str[i]), 1);
 			i++;
 		}
+		write(1, "\n", 2);
 	}
-	return (i);
-}
-
-int			ft_mas(int **mas, t_list *lst)
-{
-	int		i;
-	int		j;
-
-	j = 0;
-	i = ft_lstnum(&lst);
-	*mas = (int *)malloc(sizeof(int) * i);
-	while (j < i)
-	{
-		(*mas)[j] = lst->content;
-		lst = lst->next;
-		j++;
-	}
-	return (i);
+	return (0);
 }

@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hluthor/push_swap
+CMAKE_SOURCE_DIR = /Users/hluthor/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hluthor/push_swap/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/hluthor/test/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hluthor/push_swap/cmake-build-debug/CMakeFiles /Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hluthor/test/cmake-build-debug/CMakeFiles /Users/hluthor/test/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hluthor/push_swap/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hluthor/test/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled
+# Target rules for targets named test
 
 # Build rule for target.
-untitled: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 untitled
-.PHONY : untitled
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-untitled/fast:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 checker1.o: checker1.c.o
 
@@ -129,7 +129,7 @@ checker1.o: checker1.c.o
 
 # target to build an object file
 checker1.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker1.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker1.c.o
 .PHONY : checker1.c.o
 
 checker1.i: checker1.c.i
@@ -138,7 +138,7 @@ checker1.i: checker1.c.i
 
 # target to preprocess a source file
 checker1.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker1.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker1.c.i
 .PHONY : checker1.c.i
 
 checker1.s: checker1.c.s
@@ -147,7 +147,7 @@ checker1.s: checker1.c.s
 
 # target to generate assembly for a file
 checker1.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker1.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker1.c.s
 .PHONY : checker1.c.s
 
 checker2.o: checker2.c.o
@@ -156,7 +156,7 @@ checker2.o: checker2.c.o
 
 # target to build an object file
 checker2.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker2.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker2.c.o
 .PHONY : checker2.c.o
 
 checker2.i: checker2.c.i
@@ -165,7 +165,7 @@ checker2.i: checker2.c.i
 
 # target to preprocess a source file
 checker2.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker2.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker2.c.i
 .PHONY : checker2.c.i
 
 checker2.s: checker2.c.s
@@ -174,7 +174,7 @@ checker2.s: checker2.c.s
 
 # target to generate assembly for a file
 checker2.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker2.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker2.c.s
 .PHONY : checker2.c.s
 
 checker3.o: checker3.c.o
@@ -183,7 +183,7 @@ checker3.o: checker3.c.o
 
 # target to build an object file
 checker3.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker3.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker3.c.o
 .PHONY : checker3.c.o
 
 checker3.i: checker3.c.i
@@ -192,7 +192,7 @@ checker3.i: checker3.c.i
 
 # target to preprocess a source file
 checker3.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker3.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker3.c.i
 .PHONY : checker3.c.i
 
 checker3.s: checker3.c.s
@@ -201,7 +201,7 @@ checker3.s: checker3.c.s
 
 # target to generate assembly for a file
 checker3.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker3.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker3.c.s
 .PHONY : checker3.c.s
 
 checker4.o: checker4.c.o
@@ -210,7 +210,7 @@ checker4.o: checker4.c.o
 
 # target to build an object file
 checker4.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker4.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker4.c.o
 .PHONY : checker4.c.o
 
 checker4.i: checker4.c.i
@@ -219,7 +219,7 @@ checker4.i: checker4.c.i
 
 # target to preprocess a source file
 checker4.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker4.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker4.c.i
 .PHONY : checker4.c.i
 
 checker4.s: checker4.c.s
@@ -228,7 +228,7 @@ checker4.s: checker4.c.s
 
 # target to generate assembly for a file
 checker4.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker4.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker4.c.s
 .PHONY : checker4.c.s
 
 checker5.o: checker5.c.o
@@ -237,7 +237,7 @@ checker5.o: checker5.c.o
 
 # target to build an object file
 checker5.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker5.c.o
 .PHONY : checker5.c.o
 
 checker5.i: checker5.c.i
@@ -246,7 +246,7 @@ checker5.i: checker5.c.i
 
 # target to preprocess a source file
 checker5.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker5.c.i
 .PHONY : checker5.c.i
 
 checker5.s: checker5.c.s
@@ -255,7 +255,7 @@ checker5.s: checker5.c.s
 
 # target to generate assembly for a file
 checker5.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/checker5.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/checker5.c.s
 .PHONY : checker5.c.s
 
 print_action.o: print_action.c.o
@@ -264,7 +264,7 @@ print_action.o: print_action.c.o
 
 # target to build an object file
 print_action.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/print_action.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/print_action.c.o
 .PHONY : print_action.c.o
 
 print_action.i: print_action.c.i
@@ -273,7 +273,7 @@ print_action.i: print_action.c.i
 
 # target to preprocess a source file
 print_action.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/print_action.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/print_action.c.i
 .PHONY : print_action.c.i
 
 print_action.s: print_action.c.s
@@ -282,7 +282,7 @@ print_action.s: print_action.c.s
 
 # target to generate assembly for a file
 print_action.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/print_action.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/print_action.c.s
 .PHONY : print_action.c.s
 
 push_swap.o: push_swap.c.o
@@ -291,7 +291,7 @@ push_swap.o: push_swap.c.o
 
 # target to build an object file
 push_swap.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/push_swap.c.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/push_swap.c.o
 .PHONY : push_swap.c.o
 
 push_swap.i: push_swap.c.i
@@ -300,7 +300,7 @@ push_swap.i: push_swap.c.i
 
 # target to preprocess a source file
 push_swap.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/push_swap.c.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/push_swap.c.i
 .PHONY : push_swap.c.i
 
 push_swap.s: push_swap.c.s
@@ -309,8 +309,116 @@ push_swap.s: push_swap.c.s
 
 # target to generate assembly for a file
 push_swap.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/push_swap.c.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/push_swap.c.s
 .PHONY : push_swap.c.s
+
+sort.o: sort.c.o
+
+.PHONY : sort.o
+
+# target to build an object file
+sort.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort.c.o
+.PHONY : sort.c.o
+
+sort.i: sort.c.i
+
+.PHONY : sort.i
+
+# target to preprocess a source file
+sort.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort.c.i
+.PHONY : sort.c.i
+
+sort.s: sort.c.s
+
+.PHONY : sort.s
+
+# target to generate assembly for a file
+sort.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort.c.s
+.PHONY : sort.c.s
+
+sort1.o: sort1.c.o
+
+.PHONY : sort1.o
+
+# target to build an object file
+sort1.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort1.c.o
+.PHONY : sort1.c.o
+
+sort1.i: sort1.c.i
+
+.PHONY : sort1.i
+
+# target to preprocess a source file
+sort1.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort1.c.i
+.PHONY : sort1.c.i
+
+sort1.s: sort1.c.s
+
+.PHONY : sort1.s
+
+# target to generate assembly for a file
+sort1.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort1.c.s
+.PHONY : sort1.c.s
+
+sort2.o: sort2.c.o
+
+.PHONY : sort2.o
+
+# target to build an object file
+sort2.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort2.c.o
+.PHONY : sort2.c.o
+
+sort2.i: sort2.c.i
+
+.PHONY : sort2.i
+
+# target to preprocess a source file
+sort2.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort2.c.i
+.PHONY : sort2.c.i
+
+sort2.s: sort2.c.s
+
+.PHONY : sort2.s
+
+# target to generate assembly for a file
+sort2.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort2.c.s
+.PHONY : sort2.c.s
+
+sort3.o: sort3.c.o
+
+.PHONY : sort3.o
+
+# target to build an object file
+sort3.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort3.c.o
+.PHONY : sort3.c.o
+
+sort3.i: sort3.c.i
+
+.PHONY : sort3.i
+
+# target to preprocess a source file
+sort3.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort3.c.i
+.PHONY : sort3.c.i
+
+sort3.s: sort3.c.s
+
+.PHONY : sort3.s
+
+# target to generate assembly for a file
+sort3.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sort3.c.s
+.PHONY : sort3.c.s
 
 # Help Target
 help:
@@ -320,7 +428,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... untitled"
+	@echo "... test"
 	@echo "... checker1.o"
 	@echo "... checker1.i"
 	@echo "... checker1.s"
@@ -342,6 +450,18 @@ help:
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"
+	@echo "... sort.o"
+	@echo "... sort.i"
+	@echo "... sort.s"
+	@echo "... sort1.o"
+	@echo "... sort1.i"
+	@echo "... sort1.s"
+	@echo "... sort2.o"
+	@echo "... sort2.i"
+	@echo "... sort2.s"
+	@echo "... sort3.o"
+	@echo "... sort3.i"
+	@echo "... sort3.s"
 .PHONY : help
 
 

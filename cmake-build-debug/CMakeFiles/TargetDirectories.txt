@@ -1,3 +1,3 @@
-/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/hluthor/push_swap/cmake-build-debug/CMakeFiles/untitled.dir
+/Users/hluthor/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/hluthor/test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/hluthor/test/cmake-build-debug/CMakeFiles/test.dir
