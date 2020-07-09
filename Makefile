@@ -3,10 +3,10 @@ CFLAGS = -Wall -Wextra -Werror -g
 NAME_1 = push_swap
 NAME_2 = checker
 SOURCES_1 = push_swap.c sort.c sort1.c sort2.c sort3.c checker1.c checker2.c \
-            checker3.c checker4.c checker5.c print_action.c
+            checker3.c checker4.c checker5.c print_action.c ft_strcmp.c
 OBJECTS_1 = $(subst .c,.o,$(SOURCES_1))
 SOURCES_2 = checker.c checker1.c checker2.c checker3.c checker4.c checker5.c \
-            print_action.c check_instruction.c
+            print_action.c check_instruction.c ft_strjoin.c ft_strcmp.c
 OBJECTS_2 = $(subst .c,.o,$(SOURCES_2))
 
 PSC_HEADER = checker.h

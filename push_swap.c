@@ -6,7 +6,7 @@
 /*   By: hluthor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 14:50:41 by hluthor           #+#    #+#             */
-/*   Updated: 2020/07/08 17:56:15 by hluthor          ###   ########.fr       */
+/*   Updated: 2020/07/09 21:27:31 by hluthor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,37 +48,13 @@ int			sort_stc3(t_list **lst)
 	return (1);
 }
 
-int         ft_vsp4(t_list **lst, t_list **lst2)
+int			ft_vsp4(t_list **lst, t_list **lst2)
 {
-    ft_rotate(lst, NULL, 2, "rra");
-    ft_push(lst2, lst, "pa");
-    ft_rotate(lst, NULL, 1, "ra");
-    ft_rotate(lst, NULL, 1, "ra");
-    return (0);
-}
-
-int         sort_stc4(t_list **lst, t_list **lst2)
-{
-    t_list *cp;
-    int j;
-
-    j = 0;
-    ft_push(lst2, lst, "pb");
-    sort_stc3(lst);
-    cp = (*lst);
-    while (j < 3 && (*lst2)->content > cp->content)
-    {
-        cp = cp->next;
-        j++;
-    }
-    if (j == 0)
-        return (ft_push(lst, lst2, "pa") - 1);
-    if (j == 1)
-        return (ft_push(lst, lst2, "pa") + ft_swap(lst, NULL, "sa") - 2);
-    if (j == 3)
-        return (ft_push(lst, lst2, "pa") + ft_rotate(lst, NULL, 1, "ra") - 2);
-    else
-        return (ft_vsp4(lst, lst2));
+	ft_rotate(lst, NULL, 2, "rra");
+	ft_push(lst, lst2, "pa");
+	ft_rotate(lst, NULL, 1, "ra");
+	ft_rotate(lst, NULL, 1, "ra");
+	return (0);
 }
 
 int			part_selection(t_list **lst, t_list **lst2, int i)
@@ -90,7 +66,7 @@ int			part_selection(t_list **lst, t_list **lst2, int i)
 	if (i == 4)
 		return (sort_stc4(lst, lst2));
 	if (i == 5)
-	    return (sort_stc5(lst, lst2));
+		return (sort_stc5(lst, lst2));
 	if (i > 5 && i < 90)
 		return (2);
 	if (i > 90 && i < 400)

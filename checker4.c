@@ -76,7 +76,7 @@ int				ft_strchr(char *str)
 
 int				reterr(t_list **lst)
 {
-	if (*lst && lst)
+	if (lst && *lst)
 		freestacks(lst, NULL);
 	write(2, "Error\n", 6);
 	return (0);

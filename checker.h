@@ -6,7 +6,7 @@
 /*   By: hluthor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:49:59 by hluthor           #+#    #+#             */
-/*   Updated: 2020/07/08 17:50:52 by hluthor          ###   ########.fr       */
+/*   Updated: 2020/07/09 19:53:56 by hluthor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define CHECKER_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -37,9 +38,9 @@ int					pars_argv(t_list **stack_a, char *str);
 void				ft_splitwhitespace(char *av, char ***new);
 int					numstr(char *av);
 char				*makemas(char **av);
-int					readinstructions(t_list **stack_a, t_list **stack_b);
 void				ft_freearray(char ***new);
-int					check_instruction(t_list **st_a, t_list **st_b, char *inst);
+int					check_instruction(t_list **st_a, t_list **st_b,
+									char **inst);
 int					ft_strcmp(char *str1, char *str2);
 int					ft_swap(t_list **lst1, t_list **lst2, char *str);
 int					ft_push(t_list **lst1, t_list **lst2, char *str);
@@ -58,7 +59,7 @@ int					ft_massearch(int c, int nach, int con, int *mas);
 void				check_stc(t_list **lst);
 int					ft_first_second(int *mas, int *arr, t_list **s_a,
 									t_list **s_b);
-int			part_selection(t_list **lst, t_list **lst2, int i);
+int					part_selection(t_list **lst, t_list **lst2, int i);
 int					search_nach_con(int sch, int *con, int kol, int i);
 int					naction_a(t_list *s_a, int cont);
 int					naction_b(t_list *s_a, t_list *s_b, int i, int cont);
@@ -70,5 +71,16 @@ void				swap_a(t_list **s_a, t_list **s_b, int k);
 void				sort_b(t_list **s_a, t_list **s_b, int j, int i);
 int					print_action(char *str);
 int					check_sort(t_list *lst);
+int					ft_vsp4(t_list **lst, t_list **lst2);
+int					sort_stc4(t_list **lst, t_list **lst2);
+int					ft_vsp5(t_list **lst, t_list **lst2, int i);
+int					sort_stc5(t_list **lst, t_list **lst2);
+int					instcheck(t_list **stack_a, t_list **stack_b, char *str);
+int					readinstructions(t_list **stack_a, t_list **stack_b,
+									int ret);
+char				*ft_strjoin(char *s1, char *s2);
+void				print_action1(char *str);
+int					check_instruction1(t_list **st_a, t_list **st_b,
+										char **inst);
 
 #endif
