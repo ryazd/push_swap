@@ -20,10 +20,10 @@ int			vsp2(t_list **s_b, t_list *cp, int k)
 	while ((ft_lstnum(s_b) - i > 0))
 	{
 		ft_rotate(s_b, NULL, 2, "rrb");
-		i--;
+		i++;
 	}
 	i = 0;
-	while (cp->content < (*s_b)->content)
+	while (cp && cp->content < (*s_b)->content)
 	{
 		i++;
 		cp = cp->next;
@@ -46,7 +46,7 @@ int			vsp3(t_list **s_b, t_list *cp, int k)
 		ft_swap(s_b, NULL, "sb");
 	}
 	i = 0;
-	while (cp->content < (*s_b)->content)
+	while (cp && *s_b && cp->content < (*s_b)->content)
 	{
 		i++;
 		cp = cp->next;
@@ -70,7 +70,6 @@ void		swap_a(t_list **s_a, t_list **s_b, int k)
 		i = vsp2(s_b, cp, k);
 		vsp(s_a, s_b, i);
 	}
-	vsp1(s_b, k);
 }
 
 void		sort_b(t_list **s_a, t_list **s_b, int j, int i)
@@ -114,7 +113,7 @@ int			sort(t_list **stack_a, t_list **stack_b, int b)
 	{
 		arr[0] = search_nach_con(sch, &(arr[1]), b, i);
 		while (ft_first_second(mas, arr, stack_a, stack_b))
-			sch += 0;
+			;
 		sch++;
 	}
 	sort_stc3(stack_a);

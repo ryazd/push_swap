@@ -61,17 +61,32 @@ int			part_selection(t_list **lst, t_list **lst2, int i)
 {
 	if (i == 2)
 		return (ft_swap(lst, NULL, "sa") - 1);
-	if (i == 3)
+	else if (i == 3)
 		return (sort_stc3(lst) - 1);
-	if (i == 4)
+	else if (i == 4)
 		return (sort_stc4(lst, lst2));
-	if (i == 5)
+	else if (i == 5)
 		return (sort_stc5(lst, lst2));
-	if (i > 5 && i < 90)
+	else if (i > 5 && i < 90)
 		return (2);
-	if (i > 90 && i < 400)
-		return (5);
-	return (11);
+	else if (i >= 90 && i < 400)
+		return (6);
+	else
+	    return (15);
+}
+
+void print(t_list *a, t_list *b)
+{
+    while (a)
+    {
+        printf("%i\n", a->content);
+        a = a->next;
+    }
+    while (b)
+    {
+        printf("   %i\n", b->content);
+        b = b->next;
+    }
 }
 
 int			main(int argc, char **argv)
@@ -91,6 +106,7 @@ int			main(int argc, char **argv)
 		if ((b = part_selection(&stack_a, &stack_b, ft_lstnum(&stack_a))) > 0)
 			sort(&stack_a, &stack_b, b);
 	}
+	//print(stack_a, stack_b);
 	freestacks(&stack_a, &stack_b);
 	return (0);
 }

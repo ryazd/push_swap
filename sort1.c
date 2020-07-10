@@ -23,7 +23,7 @@ int			search_nach_con(int sch, int *con, int kol, int i)
 	if (kol == sch)
 		*con = i - 3;
 	else
-		*con = i / kol;
+		*con = (i / kol) * sch;
 	return (nach);
 }
 
@@ -51,9 +51,9 @@ int			naction_b(t_list *s_a, t_list *s_b, int i, int cont)
 	int		kol;
 
 	if (i < (ft_lstnum(&s_b) / 2))
-		kol = (i * 2) - 1;
+		kol = i;
 	else
-		kol = ((ft_lstnum(&s_b) - i) * 2) + 1;
+		kol = ((ft_lstnum(&s_b) - i) + 1);
 	kol += naction_a(s_a, cont);
 	return (kol);
 }
@@ -73,25 +73,12 @@ void		vsp(t_list **s_a, t_list **s_b, int i)
 	}
 	else
 	{
+	    i = ft_lstnum(s_a) - i;
 		c = i;
 		while (i-- > 0)
 			ft_rotate(s_a, NULL, 2, "rra");
 		ft_push(s_a, s_b, "pa");
 		while (c-- > -1)
 			ft_rotate(s_a, NULL, 1, "ra");
-	}
-}
-
-void		vsp1(t_list **lst, int i)
-{
-	if (i <= ((ft_lstnum(lst) / 2) + 1))
-	{
-		while (i-- > 1)
-			ft_rotate(lst, NULL, 2, "rrb");
-	}
-	else
-	{
-		while (i-- > 0)
-			ft_rotate(lst, NULL, 1, "rb");
 	}
 }

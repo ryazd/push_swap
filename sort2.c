@@ -60,8 +60,8 @@ int			ft_num_of_action(t_list **s_a, t_list **s_b, int i, int j)
 {
 	int		k;
 
-	k = ft_lstnum(s_a) + 1;
-	if ((i - 1) < (k - j))
+	k = ft_lstnum(s_a);
+	if (i < (k - j))
 	{
 		while (i > 0)
 		{
@@ -82,6 +82,22 @@ int			ft_num_of_action(t_list **s_a, t_list **s_b, int i, int j)
 	return (1);
 }
 
+t_list *fs(t_list **s_a, int *k)
+{
+    int i;
+    t_list *cp;
+
+    i = 0;
+    cp = *s_a;
+    while (i < ft_lstnum(s_a) / 2)
+    {
+        cp = cp->next;
+        i++;
+    }
+    *k = i;
+    return (cp);
+}
+
 int			ft_first_second(int *mas, int *arr, t_list **s_a, t_list **s_b)
 {
 	int		j;
@@ -94,12 +110,12 @@ int			ft_first_second(int *mas, int *arr, t_list **s_a, t_list **s_b)
 	c = 0;
 	r = 0;
 	cp1 = *s_a;
-	while (j < (ft_lstnum(s_a) / 2) && c == 0)
+	while (j <= (ft_lstnum(s_a) / 2) && c == 0)
 	{
 		ft_massearch(cp1->content, arr[0], arr[1], mas) ? c++ : j++;
 		cp1 = cp1->next;
 	}
-	k = j + 1;
+	cp1 = fs(s_a, &k);
 	while (cp1)
 	{
 		ft_massearch(cp1->content, arr[0], arr[1], mas) ? r = k && k++ : k++;

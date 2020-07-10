@@ -64,7 +64,6 @@ int					search_nach_con(int sch, int *con, int kol, int i);
 int					naction_a(t_list *s_a, int cont);
 int					naction_b(t_list *s_a, t_list *s_b, int i, int cont);
 void				vsp(t_list **s_a, t_list **s_b, int i);
-void				vsp1(t_list **lst, int i);
 int					vsp2(t_list **s_b, t_list *cp, int k);
 int					vsp3(t_list **s_b, t_list *cp, int k);
 void				swap_a(t_list **s_a, t_list **s_b, int k);
